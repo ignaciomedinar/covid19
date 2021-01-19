@@ -1,0 +1,73 @@
+/**/
+body {
+    background-color: rgb(249, 252, 253);
+    color: #212121;
+    font-family: fantasy;
+}
+
+.thead{
+    cursor: pointer;
+}
+
+a{
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+.big-images img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin: 30px;
+  }
+/* Sortable tables */
+/*
+table.sortable thead {
+    background-color:#9E9E9E;
+    color: #212121;
+    font-weight: bold;
+    cursor: default;
+}
+
+table {
+    background-color: rgb(249, 252, 253);
+    border-radius: 1%;
+}       
+*/
+nav img {
+    width:50px;
+    height: 50px;
+}
+.home img {
+    width:300px;
+    height:400px;
+}
+
+#search {
+    background-image: url('/static/getapiinfo/images/searchicon.png'); /* Add a search icon to input */
+    background-size: 25px 25px;
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+    border-radius: 10px;
+  }
+
+  .card{
+    border: 0;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-radius: 6px;
+    color: #333333;
+    background: #fff;
+    width: 100%;
+  }
+  .table{
+    margin-bottom: 0rem;
+  }
