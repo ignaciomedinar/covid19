@@ -23,12 +23,12 @@ def table(request):
     return render(request,'getapiinfo/home.html',args)
 
 def country(request,country):
-    print(country)
-    print(request.GET)
+    #print(country)
+    #print(request.GET)
     args ={}
     response=requests.get('https://api.covid19api.com/total/country/'+country)
-    print(response)
-    print(response.text)
+    #print(response)
+    #print(response.text)
     args['contents'] = response.json()
     return render(request,'getapiinfo/country.html',args)
 

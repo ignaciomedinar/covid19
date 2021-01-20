@@ -54,7 +54,7 @@
         
         {% for i in contents.Countries %}
         <tr>
-            <td>{{ i.Country }}</td>
+            <td><a href="/table/{{ i.Slug }}">{{ i.Country }}</td>
             <td>{{ i.NewConfirmed|intcomma }}</td>
             <td>{{ i.TotalConfirmed|intcomma }}</td>
             <td>{{ i.NewDeaths|intcomma }}</td>

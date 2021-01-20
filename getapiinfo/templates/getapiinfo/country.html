@@ -5,26 +5,29 @@
 <h1>{{ contents.Country }}</h1>
 <h2>Prueba country</h2>
 
- 
-    <table>
+<div class="container">
+ <div class="card card-stats">
+    <table  class='sortable table table-sm'>
         <tr class="header">
-            <th>First Date</th>
+            <th scope="col" class="thead">Date</th>
             <th scope="col" class="thead">Confirmed</th>
             <th scope="col" class="thead">Deaths</th>
             <th scope="col" class="thead">Recovered</th>
             <th scope="col" class="thead">Active</th>
-            <th scope="col" class="thead">Date</th>
+            
         </tr> 
         {% for i in contents %}
         <tr>
-            <td>{{ i.Date.9 }}</td>
+            <td>{{ i.Date|slice:":10" }}</td>
             <td>{{ i.Confirmed|intcomma }}</td>
             <td>{{ i.Deaths|intcomma }}</td>
             <td>{{ i.Recovered|intcomma }}</td>
             <td>{{ i.Active|intcomma }}</td>
-            <td>{{ i.Date|slice:":10" }}</td>
+            
         </tr>
         {% endfor %}
     </table>
+</div>
+</div>
     
         {% endblock contenido %}
