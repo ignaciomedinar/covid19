@@ -2,11 +2,17 @@
 {% load humanize %}
 
 {% block contenido %}
-<h1>{{ contents.Country }}</h1>
-<h2>Prueba country</h2>
+
+<body onload="loadChartCountry();">
+</div>
+<h2>{{ contents.0.Country }}</h2>
+<input type="hidden" id="myVar" name="variable" value="{{ contents.0.Country }}">
 
 <div class="container">
  <div class="card card-stats">
+    <div>
+            <canvas id="ctr"></canvas>
+        </div>
     <table  class='sortable table table-sm'>
         <tr class="header">
             <th scope="col" class="thead">Date</th>
@@ -31,3 +37,9 @@
 </div>
     
         {% endblock contenido %}
+    {% block js %}
+    {% load static %}
+    <script src="{% static '/getapiinfo/js/app.js' %}"></script>
+    {% endblock js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>

@@ -40,7 +40,7 @@
     <input type="text" id="search" onkeyup="search();" placeholder="Search for countries...">
     <div class="card card-stats">
     <table id='table' class='sortable table table-sm'>
-          
+        
         <tr class="header">
             <th scope="col" class="thead">Country</th>
             <th scope="col" class="thead">New Confirmed</th>
@@ -54,7 +54,7 @@
         
         {% for i in contents.Countries %}
         <tr>
-            <td><a href="/table/{{ i.Slug }}">{{ i.Country }}</td>
+            <td><a href="/table/{{ i.Slug }}" >{{ i.Country }}</td>
             <td>{{ i.NewConfirmed|intcomma }}</td>
             <td>{{ i.TotalConfirmed|intcomma }}</td>
             <td>{{ i.NewDeaths|intcomma }}</td>
@@ -63,8 +63,12 @@
             <td>{{ i.TotalRecovered|intcomma }}</td>
             <td>{{ i.Date|slice:":10"}}</td>
         </tr>
+        
         {% empty %}
-            <div>Nothing found</div>
+        <tr>
+            <td>Nothing found</td>
+        </tr>
+            
         {% endfor %}
     </table>
     </div>

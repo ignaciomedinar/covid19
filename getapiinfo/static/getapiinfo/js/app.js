@@ -1,5 +1,6 @@
-function dspChrt(country, total, countryD, deaths, countryR, recovered) {
+function dspChrt(country, total, countryD, deaths, countryR, recovered, statshead, stats) {
 
+    var ovl = document.getElementById('overall').getContext('2d');
     var ctx = document.getElementById('total-cases').getContext('2d');
     var dth = document.getElementById('total-deaths').getContext('2d');
     var rcv = document.getElementById('total-recovered').getContext('2d');
@@ -43,12 +44,26 @@ function dspChrt(country, total, countryD, deaths, countryR, recovered) {
             }]
         }
     });
+    
+    var myChart4 = new Chart(ovl, {
+        type: 'bar',
+        data: {
+            labels: statshead,
+            datasets: [{
+                label: 'Overall',
+                data: stats, // json value received used in method
+                backgroundColor: "rgba(153,255,51,0.4)",
+                borderColor: "black",
+                borderWidth: 1
+            }]
+        }
+    });
 }
 
 function loadChart(){
     var data, allCountry = [], allTotal = [], country = [], total = [], 
     allDeaths = [], allRecovered=[], deaths=[], recovered=[], allCountryD = [],allCountryR = []
-    countryD = [], countryR = [];
+    countryD = [], countryR = [], stats=[], statshead=[];
     
     var requestURL = 'https://api.covid19api.com/summary'; //URL of the JSON data
     var request = new XMLHttpRequest({mozSystem: true}); // create http request  
@@ -65,6 +80,13 @@ function loadChart(){
                 allRecovered.push(data.Countries[i].TotalRecovered);
                 
             }
+            statshead=['Total Confirmed', 'Total Deaths','Total Recovered']
+            // stats.push(data.Global.NewConfirmed)
+            stats.push(data.Global.TotalConfirmed)
+            // stats.push(data.Global.NewDeaths)
+            stats.push(data.Global.TotalDeaths)
+            // stats.push(data.Global.NewRecovered)
+            stats.push(data.Global.TotalRecovered)
          
             //1) combine the arrays:
             var list = [], list2=[], list3=[];
@@ -117,11 +139,76 @@ function loadChart(){
             console.log('vibrate', vibrate);
             console.log('data', data);
             */      
-            dspChrt(country, total, countryD, deaths, countryR, recovered);                
+            dspChrt(country, total, countryD, deaths, countryR, recovered,statshead,stats);                
         }
     } 
     request.open('GET', requestURL);
     request.send(); // send the request
 
 }
-// loadChart();
+
+function dspChrtCountry(dates, stats) {
+
+    var ctr = document.getElementById('ctr').getContext('2d');
+    var myChart = new Chart(ctr, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Overall',
+                data: stats, // json value received used in method
+                backgroundColor: "rgba(153,255,51,0.4)",
+                borderColor: "black",
+                borderWidth: 1
+            }]
+        }
+    });
+}
+
+function loadChartCountry(){
+    var country = document.getElementById("myVar").value;
+    //var requestURL = 'https://api.covid19api.com/total/country/angola'+country; //URL of the JSON data
+    //var request = new XMLHttpRequest({mozSystem: true}); // create http request  
+    var request = new XMLHttpRequest();
+    request.open("GET",'https://api.covid19api.com/total/country/'+country,true);
+    request.onreadystatechange=handleRequestStateChange;
+    request.send(null);
+}
+
+var handleRequestStateChange=function(event){
+    var dates=[], stats=[];
+    var request=event.target ||event.srcElement
+    if(request.readyState == 4 && request.status == 200) {
+        data = JSON.parse(request.responseText);
+
+        for (var i=0; i<data.length;i++) {
+            dates.push(data[i].Date.substring(0,10));
+            stats.push(data[i].Confirmed);            
+        }
+        console.log('dates: '+dates)
+        console.log(data)
+        dspChrtCountry(dates, stats)
+    }
+}
+
+//     console.log(request.readyState)
+//     console.log(request.status)
+//     request.onreadystatechange = function() {
+//         console.log(requestURL)
+        
+//         if(request.readyState == 4 && request.status == 200) {
+//             data = JSON.parse(request.responseText);
+//             //data = JSONdata;
+//             //console.log(data.Countries[1])
+//             for (var i=0; i<data.length;i++) {
+//                 dates.push(data[i].Date.substring(0,10));
+//                 stats.push(data[i].Confirmed);            
+//             }
+//             console.log('dates: '+dates)
+//             console.log(data)
+//             dspChrtCountry(dates, stats)
+//         }
+//     }
+//     //request.open("GET", requestURL, true);
+
+// }
