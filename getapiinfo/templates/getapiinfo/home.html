@@ -1,42 +1,15 @@
-{% extends 'base.html' %}
-{% load humanize %}
-
-{% block style %}
-    <link rel="stylesheet" href="/static/getapiinfo/css/home.css">
-{% endblock style %}
-
-{% block contenido %}
+{% extends 'base.html' %} {% load humanize %} {% block style %}
+<link rel="stylesheet" href="/static/getapiinfo/css/ubi.css"> {% endblock style %} {% block contenido %}
 
 
 <body>
-<div class="container">
-    <h2>COVID Data</h2>
     <div class="container">
-    <div class="card card-stats">
-    <table id="tableGlobal" class="table table-sm table-bordered">
-    
-        <tr>
-            <th scope="row">New Confirmed</th>
-            <td>{{ contents.Global.NewConfirmed|intcomma }}</td>
-            <th scope="row">New Deaths</th>
-            <td>{{ contents.Global.NewDeaths|intcomma }}</td>
-            <th scope="row">New Recovered</th>
-            <td>{{ contents.Global.NewRecovered|intcomma }}</td>
-        </tr>
-        <tr>
-            <th scope="row">Total Confirmed</th>
-            <td>{{ contents.Global.TotalConfirmed|intcomma }}</td>
-            <th scope="row">Total Deaths</th>
-            <td>{{ contents.Global.TotalDeaths|intcomma }}</td>
-            <th scope="row">Total Recovered</th>
-            <td>{{ contents.Global.TotalRecovered|intcomma }}</td>
-        </tr>
-    
-    </table>
-    </div>
-    </div>
-    <div class="container">
+        <h2>COVID Data</h2>
+        <div class="container">
+            <div class="card card-stats">
+                <table id="tableGlobal" class="table table-sm table-bordered table-primary table-responsive">
 
+<<<<<<< HEAD
     <input type="text" id="search" onkeyup="search();" placeholder="Search for countries...">
     <div class="card card-stats">
     <table id='table' class='sortable table table-sm'>
@@ -55,6 +28,48 @@
         {% for i in contents.Countries %}
         <tr>
             <td><a href="/table/{{ i.Slug }}" >{{ i.Country }}</td>
+=======
+                    <tr>
+                        <th scope="row">New Confirmed</th>
+                        <td>{{ contents.Global.NewConfirmed|intcomma }}</td>
+                        <th scope="row">New Deaths</th>
+                        <td>{{ contents.Global.NewDeaths|intcomma }}</td>
+                        <th scope="row">New Recovered</th>
+                        <td>{{ contents.Global.NewRecovered|intcomma }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Confirmed</th>
+                        <td>{{ contents.Global.TotalConfirmed|intcomma }}</td>
+                        <th scope="row">Total Deaths</th>
+                        <td>{{ contents.Global.TotalDeaths|intcomma }}</td>
+                        <th scope="row">Total Recovered</th>
+                        <td>{{ contents.Global.TotalRecovered|intcomma }}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div class="container">
+
+            <input type="text" id="search" onkeyup="search();" placeholder="Search for countries...">
+            <div class="card card-stats">
+                <table id='table' class='sortable table table-sm table-hover table-striped table-responsive'>
+
+                    <tr class="header">
+                        <th scope="col" class="thead">Country</th>
+                        <th scope="col" class="thead">New Confirmed</th>
+                        <th scope="col" class="thead">Total Confirmed</th>
+                        <th scope="col" class="thead">New Deaths</th>
+                        <th scope="col" class="thead">Total Deaths</th>
+                        <th scope="col" class="thead">New Recovered</th>
+                        <th scope="col" class="thead">Total Recovered</th>
+                        <th scope="col" class="thead">Date</th>
+                    </tr>
+
+                    {% for i in contents.Countries %}
+                    <tr>
+                        <td><a href="/table/{{ i.Slug }}">{{ i.Country }}</td>
+>>>>>>> af5d9e0ea265a87482994a794bbcc60fc88f550b
             <td>{{ i.NewConfirmed|intcomma }}</td>
             <td>{{ i.TotalConfirmed|intcomma }}</td>
             <td>{{ i.NewDeaths|intcomma }}</td>
