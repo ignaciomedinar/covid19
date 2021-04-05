@@ -1,0 +1,186 @@
+nav {
+    border-bottom: 5px solid #043666;
+    height: auto;
+}
+
+.bg-light {
+    background-color: #CFCFCE !important;
+}
+
+.navbar a {
+    color: #0c1d4e !important;
+    font-family: 'Cinzel', serif;
+    margin-right: 10px;
+}
+
+.navbar a:hover {
+    color: #ff0000 !important;
+}
+
+nav img {
+    width: 50px;
+}
+
+#botones {
+    -webkit-filter: drop-shadow(15px 15px 15px #969696);
+    filter: drop-shadow(15px 15px 15px #777777);
+    text-align: center;
+}
+
+#botones a:hover {
+    filter: hue-rotate(15deg) saturate(120%) brightness(250%) contrast(80%);
+}
+
+#innerBotones {
+    padding-top: 20%;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#innerBotones a {
+    font-family: 'Russo One', sans-serif;
+    font-size: 3em;
+    color: white;
+    text-decoration: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.big-images img {
+    text-align: center;
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+body {
+    text-align: center;
+    background-image: linear-gradient(white, white, #9EC3E7);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+footer {
+    font-family: 'Josefin Sans', sans-serif;
+    height: 33px;
+    text-align: center;
+    padding: 2px;
+    background-color: #CFCFCE;
+    color: #0c1d4e;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 5px solid #043666;
+}
+
+
+/*home*/
+
+#search {
+    color: black;
+    background-color: #d7ebff;
+    border: 1px solid #043666;
+    border-radius: 5px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 812px) and (max-height: 414px) {
+    #innerBotones {
+        padding-top: 5%;
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #innerBotones a {
+        font-size: 1.5em;
+    }
+    .big-images img {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        margin: 0 0 1rem 0;
+    }
+    tr:nth-child(odd) {
+        background: rgb(230, 230, 230);
+    }
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    .table-striped td:nth-of-type(1):before {
+        content: "Country";
+    }
+    .table-striped td:nth-of-type(2):before {
+        content: "New Confirmed";
+    }
+    .table-striped td:nth-of-type(3):before {
+        content: "Total Confirmed";
+    }
+    .table-striped td:nth-of-type(4):before {
+        content: "New Deaths";
+    }
+    .table-striped td:nth-of-type(5):before {
+        content: "Total Deaths";
+    }
+    .table-striped td:nth-of-type(6):before {
+        content: "New Recovered";
+    }
+    .table-striped td:nth-of-type(7):before {
+        content: "Total Recovered";
+    }
+    .table-striped td:nth-of-type(8):before {
+        content: "Date";
+    }
+    .tcountry td:nth-of-type(1):before {
+        content: "Date";
+    }
+    .tcountry td:nth-of-type(2):before {
+        content: "Confirmed";
+    }
+    .tcountry td:nth-of-type(3):before {
+        content: "Deaths";
+    }
+    .tcountry td:nth-of-type(4):before {
+        content: "Recovered";
+    }
+    .tcountry td:nth-of-type(5):before {
+        content: "Active";
+    }
+    /*graphs*/
+    .graphs {}
+}

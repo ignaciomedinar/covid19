@@ -1,44 +1,39 @@
-{% extends 'base.html' %}
-{% load humanize %}
-
-{% block contenido %}
+{% extends 'base.html' %} {% load humanize %} {% block contenido %}
 
 <body onload="loadChartCountry();">
-</div>
-<h2>{{ contents.0.Country }}</h2>
-<input type="hidden" id="myVar" name="variable" value="{{ contents.0.Country }}">
+    </div>
+    <h2>{{ contents.0.Country }}</h2>
+    <input type="hidden" id="myVar" name="variable" value="{{ contents.0.Country }}">
 
-<div class="container">
- <div class="card card-stats">
-    <div>
-            <canvas id="ctr"></canvas>
+    <div class="container">
+        <div class="card card-stats">
+            <div>
+                <canvas id="ctr"></canvas>
+            </div>
+            <table class='sortable table table-sm tcountry'>
+                <tr class="header">
+                    <th scope="col" class="thead">Date</th>
+                    <th scope="col" class="thead">Confirmed</th>
+                    <th scope="col" class="thead">Deaths</th>
+                    <th scope="col" class="thead">Recovered</th>
+                    <th scope="col" class="thead">Active</th>
+
+                </tr>
+                {% for i in contents %}
+                <tr>
+                    <td>{{ i.Date|slice:":10" }}</td>
+                    <td>{{ i.Confirmed|intcomma }}</td>
+                    <td>{{ i.Deaths|intcomma }}</td>
+                    <td>{{ i.Recovered|intcomma }}</td>
+                    <td>{{ i.Active|intcomma }}</td>
+
+                </tr>
+                {% endfor %}
+            </table>
         </div>
-    <table  class='sortable table table-sm'>
-        <tr class="header">
-            <th scope="col" class="thead">Date</th>
-            <th scope="col" class="thead">Confirmed</th>
-            <th scope="col" class="thead">Deaths</th>
-            <th scope="col" class="thead">Recovered</th>
-            <th scope="col" class="thead">Active</th>
-            
-        </tr> 
-        {% for i in contents %}
-        <tr>
-            <td>{{ i.Date|slice:":10" }}</td>
-            <td>{{ i.Confirmed|intcomma }}</td>
-            <td>{{ i.Deaths|intcomma }}</td>
-            <td>{{ i.Recovered|intcomma }}</td>
-            <td>{{ i.Active|intcomma }}</td>
-            
-        </tr>
-        {% endfor %}
-    </table>
-</div>
-</div>
-    
-        {% endblock contenido %}
-    {% block js %}
-    {% load static %}
+    </div>
+
+    {% endblock contenido %} {% block js %} {% load static %}
     <script src="{% static '/getapiinfo/js/app.js' %}"></script>
     {% endblock js %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
