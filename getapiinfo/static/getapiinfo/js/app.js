@@ -185,8 +185,8 @@ var handleRequestStateChange=function(event){
             dates.push(data[i].Date.substring(0,10));
             stats.push(data[i].Confirmed);            
         }
-        console.log('dates: '+dates)
-        console.log(data)
+        //console.log('dates: '+dates)
+        //console.log(data)
         dspChrtCountry(dates, stats)
     }
 }

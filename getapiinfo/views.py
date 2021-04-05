@@ -29,6 +29,7 @@ def country(request,country):
     response=requests.get('https://api.covid19api.com/total/country/'+country)
     #print(response)
     #print(response.text)
+    args['slug']=country
     args['contents'] = response.json()
     return render(request,'getapiinfo/country.html',args)
 
