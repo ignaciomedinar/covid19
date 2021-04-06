@@ -9,26 +9,6 @@
             <div class="card card-stats">
                 <table id="tableGlobal" class="table table-sm table-bordered table-primary table-responsive">
 
-<<<<<<< HEAD
-    <input type="text" id="search" onkeyup="search();" placeholder="Search for countries...">
-    <div class="card card-stats">
-    <table id='table' class='sortable table table-sm'>
-        
-        <tr class="header">
-            <th scope="col" class="thead">Country</th>
-            <th scope="col" class="thead">New Confirmed</th>
-            <th scope="col" class="thead">Total Confirmed</th>
-            <th scope="col" class="thead">New Deaths</th>
-            <th scope="col" class="thead">Total Deaths</th>
-            <th scope="col" class="thead">New Recovered</th>
-            <th scope="col" class="thead">Total Recovered</th>
-            <th scope="col" class="thead">Update</th>
-        </tr>
-        
-        {% for i in contents.Countries %}
-        <tr>
-            <td><a href="/table/{{ i.Slug }}" >{{ i.Country }}</td>
-=======
                     <tr>
                         <th scope="row">New Confirmed</th>
                         <td>{{ contents.Global.NewConfirmed|intcomma }}</td>
@@ -69,7 +49,6 @@
                     {% for i in contents.Countries %}
                     <tr>
                         <td><a href="/table/{{ i.Slug }}">{{ i.Country }}</td>
->>>>>>> af5d9e0ea265a87482994a794bbcc60fc88f550b
             <td>{{ i.NewConfirmed|intcomma }}</td>
             <td>{{ i.TotalConfirmed|intcomma }}</td>
             <td>{{ i.NewDeaths|intcomma }}</td>

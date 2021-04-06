@@ -14,10 +14,34 @@ function dspChrt(country, total, countryD, deaths, countryR, recovered, statshea
                 data: total, // json value received used in method
                 backgroundColor: "rgba(153,255,51,0.4)",
                 borderColor: "black",
-                borderWidth: 1
+                borderWidth: 1,
+                responsive: true
             }]
+        },
+        options:{
+            animation: false,
+            legend: {display: false},
+            //maintainAspectRatio: false,
+            responsive: true,
+            responsiveAnimationDuration: 0,
+            scales: {
+                yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    callback: function(value, index, values) {
+                    if(parseInt(value) >= 1000){
+                        val=value/1000
+                        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'k';
+                    } else {
+                        return '$' + value;
+                    }
+                    }
+                }
+            }]
+            }
         }
     });
+    
     var myChart2 = new Chart(dth, {
         type: 'bar',
         data: {
@@ -27,8 +51,31 @@ function dspChrt(country, total, countryD, deaths, countryR, recovered, statshea
                 data: deaths, // json value received used in method
                 backgroundColor: "rgba(153,255,51,0.4)",
                 borderColor: "black",
-                borderWidth: 1
+                borderWidth: 1,
+                responsive: true
             }]
+        },
+        options:{
+            animation: false,
+            legend: {display: false},
+            //maintainAspectRatio: false,
+            responsive: true,
+            responsiveAnimationDuration: 0,
+            scales: {
+                yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    callback: function(value, index, values) {
+                    if(parseInt(value) >= 1000){
+                        val=value/1000
+                        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'k';
+                    } else {
+                        return '$' + value;
+                    }
+                    }
+                }
+            }]
+            }
         }
     });
     var myChart3 = new Chart(rcv, {
@@ -40,8 +87,31 @@ function dspChrt(country, total, countryD, deaths, countryR, recovered, statshea
                 data: recovered, // json value received used in method
                 backgroundColor: "rgba(153,255,51,0.4)",
                 borderColor: "black",
-                borderWidth: 1
+                borderWidth: 1,
+                responsive: true
             }]
+        },
+        options:{
+            animation: false,
+            legend: {display: false},
+            //maintainAspectRatio: false,
+            responsive: true,
+            responsiveAnimationDuration: 0,
+            scales: {
+                yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    callback: function(value, index, values) {
+                    if(parseInt(value) >= 1000){
+                        val=value/1000
+                        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'k';
+                    } else {
+                        return '$' + value;
+                    }
+                    }
+                }
+            }]
+            }
         }
     });
     
@@ -54,8 +124,31 @@ function dspChrt(country, total, countryD, deaths, countryR, recovered, statshea
                 data: stats, // json value received used in method
                 backgroundColor: "rgba(153,255,51,0.4)",
                 borderColor: "black",
-                borderWidth: 1
+                borderWidth: 1,
+                responsive: true
             }]
+        },
+        options:{
+            animation: false,
+            legend: {display: false},
+            //maintainAspectRatio: false,
+            responsive: true,
+            responsiveAnimationDuration: 0,
+            scales: {
+                yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    callback: function(value, index, values) {
+                    if(parseInt(value) >= 1000){
+                        val=value/1000
+                        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'k';
+                    } else {
+                        return '$' + value;
+                    }
+                    }
+                }
+            }]
+            }
         }
     });
 }
@@ -159,8 +252,35 @@ function dspChrtCountry(dates, stats) {
                 data: stats, // json value received used in method
                 backgroundColor: "rgba(153,255,51,0.4)",
                 borderColor: "black",
-                borderWidth: 1
+                borderWidth: 1,
+                borderCapStyle: "butt",
+                tension: 0,
+                pointBorderWidth: 0,
+                pointHitRadius: 0,
+                responsive: true
             }]
+        },
+        options:{
+            animation: false,
+            legend: {display: false},
+            //maintainAspectRatio: false,
+            responsive: true,
+            responsiveAnimationDuration: 0,
+            scales: {
+                yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    callback: function(value, index, values) {
+                    if(parseInt(value) >= 1000){
+                        val=value/1000
+                        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + 'k';
+                    } else {
+                        return '$' + value;
+                    }
+                    }
+                }
+            }]
+            }
         }
     });
 }

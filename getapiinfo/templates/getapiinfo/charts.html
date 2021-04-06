@@ -2,20 +2,24 @@
 
 <body onload="loadChart();">
 
-    <div>
-        <div class="container" style="width: 40%;">
+    <div class="container">
+        <div class="card card-stats">
             <h2>Top Cases by Country Chart</h2>
-            <div>
-                <canvas id="overall" class='graphs'></canvas>
+            <div >
+                <h4>Overall</h4>
+                <canvas id="overall" width:95%></canvas>
             </div>
-            <div>
-                <canvas id="total-cases" class='graphs'></canvas>
+            <div >
+                <h4>Total Cases</h4>
+                <canvas id="total-cases" width:95%></canvas>
             </div>
-            <div>
-                <canvas id="total-deaths" class='graphs'></canvas>
+            <div >
+                <h4>Total Deaths</h4>
+                <canvas id="total-deaths" width:95%></canvas>
             </div>
-            <div>
-                <canvas id="total-recovered" class='graphs'></canvas>
+            <div >
+                <h4>Total Recovered</h4>
+                <canvas id="total-recovered" width:95%></canvas>
             </div>
         </div>
         {% endblock contenido %} {% block js %} {% load static %}

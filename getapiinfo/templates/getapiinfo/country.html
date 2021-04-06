@@ -1,14 +1,9 @@
 {% extends 'base.html' %} {% load humanize %} {% block contenido %}
 
 <body onload="loadChartCountry();">
-<<<<<<< HEAD
-</div>
-<h2>{{ contents.0.Country }}</h2>
-<input type="hidden" id="myVar" name="variable" value="{{ slug }}">
-=======
     </div>
     <h2>{{ contents.0.Country }}</h2>
-    <input type="hidden" id="myVar" name="variable" value="{{ contents.0.Country }}">
+    <input type="hidden" id="myVar" name="variable" value="{{ slug }}">
 
     <div class="container">
         <div class="card card-stats">
@@ -22,7 +17,6 @@
                     <th scope="col" class="thead">Deaths</th>
                     <th scope="col" class="thead">Recovered</th>
                     <th scope="col" class="thead">Active</th>
->>>>>>> af5d9e0ea265a87482994a794bbcc60fc88f550b
 
                 </tr>
                 {% for i in contents %}

@@ -26,9 +26,12 @@ nav img {
     filter: drop-shadow(15px 15px 15px #777777);
     text-align: center;
 }
-
+#botones a {
+    display: block;
+}
 #botones a:hover {
     filter: hue-rotate(15deg) saturate(120%) brightness(250%) contrast(80%);
+    -webkit-filter:hue-rotate(15deg) saturate(120%) brightness(250%) contrast(80%);
 }
 
 #innerBotones {
@@ -183,4 +186,13 @@ footer {
     }
     /*graphs*/
     .graphs {}
+}
+
+/*
+.wrapper{
+    height: 200px !important;
+}
+*/
+.h4{
+    font-size: 15px;
 }
