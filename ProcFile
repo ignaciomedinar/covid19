@@ -1,0 +1,1 @@
+web: gunicorn getapi.wsgi --log-file -
