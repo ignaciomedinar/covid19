@@ -184,9 +184,9 @@ footer {
     .tcountry td:nth-of-type(5):before {
         content: "Active";
     }
-    /*graphs*/
+    /*graphs
     .graphs {}
-}
+*/}
 
 /*
 .wrapper{
