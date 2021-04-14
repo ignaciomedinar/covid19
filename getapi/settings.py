@@ -30,8 +30,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['coviddaily.herokuapp.com',
 'www.graphiccovid19.com',
-'graphiccovid19.com']
-
+'graphiccovid19.com'
+]
+# quitar el 127... cuando es a producción
 
 # Application definition
 
@@ -82,6 +83,7 @@ WSGI_APPLICATION = 'getapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# la primera va cuando no es a producción y la segunda va a producción
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

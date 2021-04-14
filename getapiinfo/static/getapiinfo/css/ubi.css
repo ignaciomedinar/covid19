@@ -9,7 +9,8 @@ nav {
 
 .navbar a {
     color: #0c1d4e !important;
-    font-family: 'Cinzel', serif;
+    font-family: 'Helvetica Neue', sans-serif;
+    /* 'Segoe UI',sans-serif */
     margin-right: 10px;
 }
 
@@ -35,7 +36,7 @@ nav img {
 }
 
 #innerBotones {
-    padding-top: 20%;
+    padding-top: 8%;
     min-height: 250px;
     display: flex;
     justify-content: center;
@@ -43,7 +44,7 @@ nav img {
 }
 
 #innerBotones a {
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Segoe UI',sans-serif;
     font-size: 3em;
     color: white;
     text-decoration: none;
@@ -195,4 +196,7 @@ footer {
 */
 .h4{
     font-size: 15px;
+}
+#news{
+    margin-top: 10px;
 }
