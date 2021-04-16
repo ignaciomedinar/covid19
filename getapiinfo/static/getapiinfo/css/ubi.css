@@ -1,5 +1,5 @@
 nav {
-    border-bottom: 5px solid #043666;
+    border-bottom: 3px solid #043666;
     height: auto;
 }
 
@@ -65,9 +65,10 @@ nav img {
 body {
     text-align: center;
     /* background-image: linear-gradient(white, white, #9EC3E7); */
-    background-color: #B3E5FC;
+    background-color: #FFFFFF;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-size: .85rem;
 }
 
 footer {
@@ -212,19 +213,36 @@ footer {
 }
 #news{
     margin-top: 10px;
+    margin-bottom: 25px;
 }
 .carta{
-    background-color: #BDBDBD;
-    border: 2px solid rgba(0,0,0,.5);
+    /* background-color: #BDBDBD; */
+    /* border: 2px solid rgba(0,0,0,.5); */
     border-radius: 0.5rem;
 }
 .fila{
     
-    background-color: #03A9F4 !important; 
+    background-color: #FFFFFF !important; 
 }
 #tableGlobal{
     margin-bottom: 0 !important;
 }
 #countryData{
     margin-top: 10px;
+}
+tr, .border{
+    border-style: none;
+    background-color: #FFFFFF;
+}
+p{
+    padding: 10px;
+}
+.card{
+    border: none;
+}
+h2{
+    margin-top: .5rem;
+}
+canvas{
+        height: 400px;
 }
