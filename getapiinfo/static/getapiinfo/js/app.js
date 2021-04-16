@@ -250,14 +250,15 @@ function dspChrtCountry(dates, stats) {
             datasets: [{
                 label: 'Overall',
                 data: stats, // json value received used in method
-                backgroundColor: "rgba(153,255,51,0.4)",
-                borderColor: "black",
+                backgroundColor: "rgba(2,136,209,0)",
+                borderColor: "rgb(2,136,209)",
                 borderWidth: 1,
-                borderCapStyle: "butt",
+                borderCapStyle: "butt", //"butt"
                 tension: 0,
                 pointBorderWidth: 0,
                 pointHitRadius: 0,
-                responsive: true
+                responsive: true,
+                pointStyle: 'circle'
             }]
         },
         options:{

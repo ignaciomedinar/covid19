@@ -9,7 +9,9 @@ nav {
 
 .navbar a {
     color: #0c1d4e !important;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'gothic', sans-serif;
+    font-weight: bold;
+    font-size: large;
     /* 'Segoe UI',sans-serif */
     margin-right: 10px;
 }
@@ -45,6 +47,7 @@ nav img {
 
 #innerBotones a {
     font-family: 'Segoe UI',sans-serif;
+    font-weight: bold;
     font-size: 3em;
     color: white;
     text-decoration: none;
@@ -61,7 +64,8 @@ nav img {
 
 body {
     text-align: center;
-    background-image: linear-gradient(white, white, #9EC3E7);
+    /* background-image: linear-gradient(white, white, #9EC3E7); */
+    background-color: #B3E5FC;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -85,10 +89,11 @@ footer {
 
 #search {
     color: black;
-    background-color: #d7ebff;
+    background-color: #FFFFFF;
     border: 1px solid #043666;
     border-radius: 5px;
     text-align: center;
+    margin: 10px;
 }
 
 @media only screen and (max-width: 812px) and (max-height: 414px) {
@@ -117,6 +122,13 @@ footer {
     tr {
         display: block;
     }
+    .table{
+        margin-bottom: 0;
+        background-color: #FFFFFF;
+    }
+    tr th td{
+        border-width: 0;
+    }
     /* Hide table headers (but not display: none;, for accessibility) */
     thead tr {
         position: absolute;
@@ -124,7 +136,7 @@ footer {
         left: -9999px;
     }
     tr {
-        margin: 0 0 1rem 0;
+        margin: 0 ;
     }
     tr:nth-child(odd) {
         background: rgb(230, 230, 230);
@@ -141,6 +153,7 @@ footer {
         position: absolute;
         /* Top/left values mimic padding */
         top: 0;
+        margin-bottom: 0;
         left: 6px;
         width: 45%;
         padding-right: 10px;
@@ -198,5 +211,20 @@ footer {
     font-size: 15px;
 }
 #news{
+    margin-top: 10px;
+}
+.carta{
+    background-color: #BDBDBD;
+    border: 2px solid rgba(0,0,0,.5);
+    border-radius: 0.5rem;
+}
+.fila{
+    
+    background-color: #03A9F4 !important; 
+}
+#tableGlobal{
+    margin-bottom: 0 !important;
+}
+#countryData{
     margin-top: 10px;
 }
